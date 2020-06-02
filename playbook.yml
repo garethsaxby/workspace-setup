@@ -1,0 +1,120 @@
+---
+- name: Configure Workspace
+  hosts: localhost
+  tasks:
+    - name: Add Desired Repository Keys
+      apt_key:
+        url: "{{ item }}"
+        state: present
+      become: yes
+      loop:
+        - https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+    - name: Add Desired Repositories
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+      become: yes
+      loop:
+        - deb https://apt.kubernetes.io/ kubernetes-xenial main
+
+    - name: Install Packages
+      apt:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+        force_apt_get: yes
+      become: yes
+      vars:
+        packages:
+          - git
+          - kubectl
+          - virtualenv
+          - python-setuptools
+          - python3-setuptools
+          - unzip
+          - jq
+          - neovim
+
+    - name: Install Python Packages
+      pip:
+        name: "{{ packages }}"
+        virtualenv: /home/gsaxby/.python_env/
+        virtualenv_python: python3.8
+        state: latest
+      vars:
+        packages:
+        - pre-commit
+        - awscli
+        - ansible
+        - ansible-lint
+
+    - name: Create User bin Directory
+      file:
+        dest: /home/gsaxby/bin/
+        state: directory
+
+    - name: Link Python Applications
+      file:
+        dest: "/home/gsaxby/bin/{{ item }}"
+        src: "/home/gsaxby/.python_env/bin/{{ item }}"
+        state: link
+      loop:
+      - pre-commit
+      - pre-commit-validate-manifest
+      - pre-commit-validate-config
+      - aws
+      - ansible
+      - ansible-playbook
+      - ansible-config
+      - ansible-connection
+      - ansible-console
+      - ansible-doc
+      - ansible-galaxy
+      - ansible-inventory
+      - ansible-pull
+      - ansible-vault
+      - ansible-lint
+
+    - name: Download HashiCorp Tools
+      get_url:
+        url: "{{ item.url }}"
+        dest: "/tmp/{{ item.filename }}"
+        checksum: "{{ item.checksum }}"
+      loop:
+      - { url: "https://releases.hashicorp.com/terraform/0.12.12/terraform_0.12.12_linux_amd64.zip", filename: "terraform.zip", checksum: "sha256:67bc7a49c0946ad48b14cc6e95482fdd3e7e9f7dc6811f4ce6ff531fc565bd3a" }
+      - { url: "https://releases.hashicorp.com/packer/1.4.4/packer_1.4.4_linux_amd64.zip", filename: "packer.zip", checksum: "sha256:b4dc37877a0fd00fc72ebda98977c2133be9ba6b26bcdd13b1b14a369e508948" }
+      - { url: "https://releases.hashicorp.com/vault/1.2.3/vault_1.2.3_linux_amd64.zip", filename: "vault.zip", checksum: "sha256:fe15676404aff35cb45f7c957f90491921b9269d79a8f933c5a36e26a431bfc4" }
+      - { url: "https://releases.hashicorp.com/consul/1.6.1/consul_1.6.1_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:a8568ca7b6797030b2c32615b4786d4cc75ce7aee2ed9025996fe92b07b31f7e" }
+      - { url: "https://releases.hashicorp.com/nomad/0.10.0/nomad_0.10.0_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:dd9dbe334e36e15c6f659c52d2722743f6632674fc9ffb42774378eb8ee1747f" }
+
+    - name: Extract HashiCorp Tools
+      unarchive:
+        src: "/tmp/{{ item }}"
+        dest: /home/gsaxby/bin/
+      loop:
+      - terraform.zip
+      - packer.zip
+      - vault.zip
+      - consul.zip
+      - nomad.zip
+
+    - name: Set Default Editor
+      alternatives:
+        name: "{{ item }}"
+        path: /usr/bin/nvim
+      become: yes
+      loop:
+      - vi
+      - vim
+      - editor
+
+    - name: Set git Configuration
+      git_config:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        scope: global
+        state: present
+      loop:
+      - { name: "user.email", value: "garethsaxby@users.noreply.github.com" }
+      - { name: "user.name", value: "Gareth Saxby" }
