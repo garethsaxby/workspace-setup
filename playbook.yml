@@ -52,6 +52,7 @@
           - unzip
           - jq
           - neovim
+          - gnupg-utils
 
     - name: Install Python Packages
       pip:
