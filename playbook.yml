@@ -95,7 +95,7 @@
       - ansible-vault
       - ansible-lint
 
-    - name: Download HashiCorp Tools
+    - name: Download Zipped Tools
       get_url:
         url: "{{ item.url }}"
         dest: "/tmp/{{ item.filename }}"
@@ -107,7 +107,7 @@
       - { url: "https://releases.hashicorp.com/consul/1.7.3/consul_1.7.3_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:453814aa5d0c2bc1f8843b7985f2a101976433db3e6c0c81782a3c21dd3f9ac3" }
       - { url: "https://releases.hashicorp.com/nomad/0.11.2/nomad_0.11.2_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:0c190d3cca12b75645e946e49207bf62bff8e0d8f52eee43dc059dbb8814da99" }
 
-    - name: Extract HashiCorp Tools
+    - name: Extract Zipped Tools
       unarchive:
         src: "/tmp/{{ item }}"
         dest: /home/gsaxby/bin/
