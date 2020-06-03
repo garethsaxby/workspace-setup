@@ -117,6 +117,15 @@
       - consul.zip
       - nomad.zip
 
+    - name: Download Helm
+      get_url:
+        url: "{{ item.url }}"
+        dest: "/tmp/{{ item.filename }}"
+        checksum: "{{ item.checksum }}"
+      loop:
+      - { url: "https://get.helm.sh/helm-v3.2.1-linux-amd64.tar.gz", filename: "helm.tar.gz", checksum: "sha256:018f9908cb950701a5d59e757653a790c66d8eda288625dbb185354ca6f41f6b" }
+
+
     - name: Set Default Editor
       alternatives:
         name: "{{ item }}"
