@@ -95,7 +95,7 @@
       - ansible-vault
       - ansible-lint
 
-    - name: Download Zipped Tools
+    - name: Download Tools
       get_url:
         url: "{{ item.url }}"
         dest: "/tmp/{{ item.filename }}"
@@ -106,8 +106,9 @@
       - { url: "https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip", filename: "vault.zip", checksum: "sha256:f2bca89cbffb8710265eb03bc9452cc316b03338c411ba8453ffe7419390b8f1" }
       - { url: "https://releases.hashicorp.com/consul/1.7.3/consul_1.7.3_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:453814aa5d0c2bc1f8843b7985f2a101976433db3e6c0c81782a3c21dd3f9ac3" }
       - { url: "https://releases.hashicorp.com/nomad/0.11.2/nomad_0.11.2_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:0c190d3cca12b75645e946e49207bf62bff8e0d8f52eee43dc059dbb8814da99" }
+      - { url: "https://get.helm.sh/helm-v3.2.1-linux-amd64.tar.gz", filename: "helm.tar.gz", checksum: "sha256:018f9908cb950701a5d59e757653a790c66d8eda288625dbb185354ca6f41f6b" }
 
-    - name: Extract Zipped Tools
+    - name: Extract Tools
       unarchive:
         src: "/tmp/{{ item }}"
         dest: /home/gsaxby/bin/
@@ -117,15 +118,7 @@
       - vault.zip
       - consul.zip
       - nomad.zip
-
-    - name: Download Helm
-      get_url:
-        url: "{{ item.url }}"
-        dest: "/tmp/{{ item.filename }}"
-        checksum: "{{ item.checksum }}"
-      loop:
-      - { url: "https://get.helm.sh/helm-v3.2.1-linux-amd64.tar.gz", filename: "helm.tar.gz", checksum: "sha256:018f9908cb950701a5d59e757653a790c66d8eda288625dbb185354ca6f41f6b" }
-
+      - helm.tar.gz
 
     - name: Set Default Editor
       alternatives:
