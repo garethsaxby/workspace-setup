@@ -53,6 +53,7 @@
           - jq
           - neovim
           - gnupg-utils
+          - zsh
 
     - name: Install Python Packages
       pip:
