@@ -135,3 +135,5 @@
       loop:
       - { name: "user.email", value: "garethsaxby@users.noreply.github.com" }
       - { name: "user.name", value: "Gareth Saxby" }
+      - { name: "core.editor", value: "vim" }
+      - { name: "push.default", value: "current" }
