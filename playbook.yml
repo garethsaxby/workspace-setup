@@ -2,6 +2,23 @@
 - name: Configure Workspace
   hosts: localhost
   tasks:
+    - name: Configure my user
+      user:
+        name: gsaxby
+        comment: "Gareth Saxby"
+        create_home: yes
+        groups:
+          - adm
+          - cdrom
+          - sudo
+          - dip
+          - plugdev
+          - lxd
+        append: yes
+        shell: /usr/bin/zsh
+        state: present
+      become: yes
+
     - name: Add Desired Repository Keys
       apt_key:
         url: "{{ item }}"
