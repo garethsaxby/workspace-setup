@@ -54,6 +54,11 @@
           - neovim
           - gnupg-utils
           - zsh
+          - binutils
+          - bison
+          - gcc
+          - make
+          - golang
 
     - name: Install Python Packages
       pip:
