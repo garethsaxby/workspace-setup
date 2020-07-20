@@ -123,6 +123,15 @@
       - consul.zip
       - nomad.zip
 
+    - name: Install terraform-docs
+      get_url:
+        url: "https://github.com/terraform-docs/terraform-docs/releases/download/v0.9.1/terraform-docs-v0.9.1-linux-amd64"
+        dest: "/home/gsaxby/bin/terraform-docs"
+        checksum: "sha256:ceb4e7f291d43a5f7672f7ca9543075554bacd02cf850e6402e74f18fbf28f7e"
+        mode: 0700
+        owner: "gsaxby"
+        group: "gsaxby"
+
     - name: Download Helm
       get_url:
         url: "{{ item.url }}"
