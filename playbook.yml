@@ -111,11 +111,11 @@
         dest: "/tmp/{{ item.filename }}"
         checksum: "{{ item.checksum }}"
       loop:
-      - { url: "https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip", filename: "terraform.zip", checksum: "sha256:be99da1439a60942b8d23f63eba1ea05ff42160744116e84f46fc24f1a8011b6" }
-      - { url: "https://releases.hashicorp.com/packer/1.5.6/packer_1.5.6_linux_amd64.zip", filename: "packer.zip", checksum: "sha256:2abb95dc3a5fcfb9bf10ced8e0dd51d2a9e6582a1de1cab8ccec650101c1f9df" }
-      - { url: "https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip", filename: "vault.zip", checksum: "sha256:f2bca89cbffb8710265eb03bc9452cc316b03338c411ba8453ffe7419390b8f1" }
-      - { url: "https://releases.hashicorp.com/consul/1.7.3/consul_1.7.3_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:453814aa5d0c2bc1f8843b7985f2a101976433db3e6c0c81782a3c21dd3f9ac3" }
-      - { url: "https://releases.hashicorp.com/nomad/0.11.2/nomad_0.11.2_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:0c190d3cca12b75645e946e49207bf62bff8e0d8f52eee43dc059dbb8814da99" }
+      - { url: "https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip", filename: "terraform.zip", checksum: "sha256:872245d9c6302b24dc0d98a1e010aef1e4ef60865a2d1f60102c8ad03e9d5a1d" }
+      - { url: "https://releases.hashicorp.com/packer/1.6.0/packer_1.6.0_linux_amd64.zip", filename: "packer.zip", checksum: "sha256:a678c995cb8dc232db3353881723793da5acc15857a807d96c52e96e671309d9" }
+      - { url: "https://releases.hashicorp.com/vault/1.5.0/vault_1.5.0_linux_amd64.zip", filename: "vault.zip", checksum: "sha256:322393aee141c4711fc5f9e1df9f461af3a861e59b8d4d0a85e82477cdbc73a0" }
+      - { url: "https://releases.hashicorp.com/consul/1.8.0/consul_1.8.0_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:98df3e0a8ede84794fa4d20b1b6b5d52ad3b983dec916c4d612cecba7c48a421" }
+      - { url: "https://releases.hashicorp.com/nomad/0.12.0/nomad_0.12.0_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:065b41e39cf24e4b6bea49566b505c9b6cdaddb5fcbc7688377d89ed59078cc7" }
 
     - name: Extract HashiCorp Tools
       unarchive:
