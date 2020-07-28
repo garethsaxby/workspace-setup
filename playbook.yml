@@ -46,6 +46,7 @@
       become: yes
       vars:
         packages:
+          - dos2unix
           - git
           - kubectl
           - virtualenv
@@ -129,6 +130,21 @@
       - consul.zip
       - nomad.zip
       - sentinel.zip
+
+    - name: Download tflint
+      get_url:
+        url: "{{ item.url }}"
+        dest: "/tmp/{{ item.filename }}"
+        checksum: "{{ item.checksum }}"
+      loop:
+      - { url: "https://github.com/terraform-linters/tflint/releases/download/v0.18.0/tflint_linux_amd64.zip", filename: "tflint.zip", checksum: "sha256:9e6c536577e4969b59fa2e219a45ae62a324dfaacfe2fde796d35de2092087f8" }
+
+    - name: Extract tflint
+      unarchive:
+        src: "/tmp/{{ item }}"
+        dest: /home/gsaxby/bin/
+      loop:
+      - tflint.zip
 
     - name: Install terraform-docs
       get_url:
