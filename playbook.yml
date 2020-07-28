@@ -116,12 +116,36 @@
         dest: "/tmp/{{ item.filename }}"
         checksum: "{{ item.checksum }}"
       loop:
-      - { url: "https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip", filename: "terraform.zip", checksum: "sha256:872245d9c6302b24dc0d98a1e010aef1e4ef60865a2d1f60102c8ad03e9d5a1d" }
-      - { url: "https://releases.hashicorp.com/packer/1.6.0/packer_1.6.0_linux_amd64.zip", filename: "packer.zip", checksum: "sha256:a678c995cb8dc232db3353881723793da5acc15857a807d96c52e96e671309d9" }
-      - { url: "https://releases.hashicorp.com/vault/1.5.0/vault_1.5.0_linux_amd64.zip", filename: "vault.zip", checksum: "sha256:322393aee141c4711fc5f9e1df9f461af3a861e59b8d4d0a85e82477cdbc73a0" }
-      - { url: "https://releases.hashicorp.com/consul/1.8.0/consul_1.8.0_linux_amd64.zip", filename: "consul.zip", checksum: "sha256:98df3e0a8ede84794fa4d20b1b6b5d52ad3b983dec916c4d612cecba7c48a421" }
-      - { url: "https://releases.hashicorp.com/nomad/0.12.1/nomad_0.12.1_linux_amd64.zip", filename: "nomad.zip", checksum: "sha256:b9a266340306f5e8ccbc41b1076250296abb626f7f233c79b70e000e531da509" }
-      - { url: "https://releases.hashicorp.com/sentinel/0.15.6/sentinel_0.15.6_linux_amd64.zip", filename: "sentinel.zip", checksum: "sha256:83b607b3c86836362dcbd55dc65a497a4ee6056a72ba63f35a01e145e3076198"}
+      - {
+          url: "https://releases.hashicorp.com/terraform/0.12.29/terraform_0.12.29_linux_amd64.zip",
+          filename: "terraform.zip",
+          checksum: "sha256:872245d9c6302b24dc0d98a1e010aef1e4ef60865a2d1f60102c8ad03e9d5a1d"
+        }
+      - {
+          url: "https://releases.hashicorp.com/packer/1.6.0/packer_1.6.0_linux_amd64.zip",
+          filename: "packer.zip",
+          checksum: "sha256:a678c995cb8dc232db3353881723793da5acc15857a807d96c52e96e671309d9"
+        }
+      - {
+          url: "https://releases.hashicorp.com/vault/1.5.0/vault_1.5.0_linux_amd64.zip",
+          filename: "vault.zip",
+          checksum: "sha256:322393aee141c4711fc5f9e1df9f461af3a861e59b8d4d0a85e82477cdbc73a0"
+        }
+      - {
+          url: "https://releases.hashicorp.com/consul/1.8.0/consul_1.8.0_linux_amd64.zip",
+          filename: "consul.zip",
+          checksum: "sha256:98df3e0a8ede84794fa4d20b1b6b5d52ad3b983dec916c4d612cecba7c48a421"
+        }
+      - {
+          url: "https://releases.hashicorp.com/nomad/0.12.1/nomad_0.12.1_linux_amd64.zip",
+          filename: "nomad.zip",
+          checksum: "sha256:b9a266340306f5e8ccbc41b1076250296abb626f7f233c79b70e000e531da509"
+        }
+      - {
+          url: "https://releases.hashicorp.com/sentinel/0.15.6/sentinel_0.15.6_linux_amd64.zip",
+          filename: "sentinel.zip",
+          checksum: "sha256:83b607b3c86836362dcbd55dc65a497a4ee6056a72ba63f35a01e145e3076198"
+        }
 
     - name: Extract HashiCorp Tools
       unarchive:
@@ -141,7 +165,11 @@
         dest: "/tmp/{{ item.filename }}"
         checksum: "{{ item.checksum }}"
       loop:
-      - { url: "https://github.com/terraform-linters/tflint/releases/download/v0.18.0/tflint_linux_amd64.zip", filename: "tflint.zip", checksum: "sha256:9e6c536577e4969b59fa2e219a45ae62a324dfaacfe2fde796d35de2092087f8" }
+      - {
+          url: "https://github.com/terraform-linters/tflint/releases/download/v0.18.0/tflint_linux_amd64.zip",
+          filename: "tflint.zip",
+          checksum: "sha256:9e6c536577e4969b59fa2e219a45ae62a324dfaacfe2fde796d35de2092087f8"
+        }
 
     - name: Extract tflint
       unarchive:
@@ -165,7 +193,11 @@
         dest: "/tmp/{{ item.filename }}"
         checksum: "{{ item.checksum }}"
       loop:
-      - { url: "https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz", filename: "helm.tar.gz", checksum: "sha256:8eb56cbb7d0da6b73cd8884c6607982d0be8087027b8ded01d6b2759a72e34b1" }
+      - {
+          url: "https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz",
+          filename: "helm.tar.gz",
+          checksum: "sha256:8eb56cbb7d0da6b73cd8884c6607982d0be8087027b8ded01d6b2759a72e34b1"
+        }
 
     - name: Extract Helm
       unarchive:
