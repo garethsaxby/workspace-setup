@@ -196,6 +196,15 @@
         owner: "gsaxby"
         group: "gsaxby"
 
+    - name: Install terragrunt
+      get_url:
+        url: "https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.31/terragrunt_linux_amd64"
+        dest: "/home/gsaxby/bin/terragrunt"
+        checksum: "sha256:efd124c2b9f406c0eb81b646e6b9eb32056095b38a130e6dc9a27d4be9bc25d9"
+        mode: 0700
+        owner: "gsaxby"
+        group: "gsaxby"
+
     - name: Download Helm
       get_url:
         url: "{{ item.url }}"
