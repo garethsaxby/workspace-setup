@@ -81,6 +81,7 @@
         - ansible
         - ansible-lint
         - sceptre
+        - terraform-compliance
 
     - name: Create User bin Directory
       file:
@@ -109,6 +110,7 @@
       - ansible-vault
       - ansible-lint
       - sceptre
+      - terraform-compliance
 
     - name: Download HashiCorp Tools
       get_url:
