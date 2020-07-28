@@ -66,6 +66,7 @@
           - docker-ce
           - docker-ce-cli
           - containerd.io
+          - shellcheck
 
     - name: Install Python Packages
       pip:
@@ -79,6 +80,7 @@
         - awscli
         - ansible
         - ansible-lint
+        - sceptre
 
     - name: Create User bin Directory
       file:
@@ -106,6 +108,7 @@
       - ansible-pull
       - ansible-vault
       - ansible-lint
+      - sceptre
 
     - name: Download HashiCorp Tools
       get_url:
