@@ -232,6 +232,24 @@
         group: gsaxby
         mode: '0700'
 
+    - name: Download Inspec
+      get_url:
+        url: "{{ item.url }}"
+        dest: "/tmp/{{ item.filename }}"
+        checksum: "{{ item.checksum }}"
+      loop:
+      - {
+          url: "https://packages.chef.io/files/stable/inspec/4.22.1/ubuntu/20.04/inspec_4.22.1-1_amd64.deb",
+          filename: "inspec.deb",
+          checksum: "sha256:6ef7db78a41c5ba5f2b0ddc10c915dc70e1a3634ca41105f8c40b745960256be"
+      }
+
+    - name: Install Inspec
+      apt:
+        deb: "/tmp/inspec.deb"
+        state: present
+      become: yes
+
     - name: Set Default Editor
       alternatives:
         name: "{{ item }}"
