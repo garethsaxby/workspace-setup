@@ -27,6 +27,7 @@
       loop:
         - https://packages.cloud.google.com/apt/doc/apt-key.gpg
         - https://download.docker.com/linux/ubuntu/gpg
+        - https://apt.releases.hashicorp.com/gpg
 
     - name: Add Desired Repositories
       apt_repository:
@@ -36,6 +37,7 @@
       loop:
         - deb https://apt.kubernetes.io/ kubernetes-xenial main
         - deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        - deb [arch=amd64] https://apt.releases.hashicorp.com focal main
 
     - name: Install Packages
       apt:
@@ -67,6 +69,9 @@
           - docker-ce-cli
           - containerd.io
           - shellcheck
+          - vault
+          - consul
+          - nomad
 
     - name: Install Python Packages
       pip:
@@ -129,21 +134,6 @@
           checksum: "sha256:a678c995cb8dc232db3353881723793da5acc15857a807d96c52e96e671309d9"
         }
       - {
-          url: "https://releases.hashicorp.com/vault/1.5.0/vault_1.5.0_linux_amd64.zip",
-          filename: "vault.zip",
-          checksum: "sha256:322393aee141c4711fc5f9e1df9f461af3a861e59b8d4d0a85e82477cdbc73a0"
-        }
-      - {
-          url: "https://releases.hashicorp.com/consul/1.8.0/consul_1.8.0_linux_amd64.zip",
-          filename: "consul.zip",
-          checksum: "sha256:98df3e0a8ede84794fa4d20b1b6b5d52ad3b983dec916c4d612cecba7c48a421"
-        }
-      - {
-          url: "https://releases.hashicorp.com/nomad/0.12.1/nomad_0.12.1_linux_amd64.zip",
-          filename: "nomad.zip",
-          checksum: "sha256:b9a266340306f5e8ccbc41b1076250296abb626f7f233c79b70e000e531da509"
-        }
-      - {
           url: "https://releases.hashicorp.com/sentinel/0.15.6/sentinel_0.15.6_linux_amd64.zip",
           filename: "sentinel.zip",
           checksum: "sha256:83b607b3c86836362dcbd55dc65a497a4ee6056a72ba63f35a01e145e3076198"
@@ -156,9 +146,6 @@
       loop:
       - terraform.zip
       - packer.zip
-      - vault.zip
-      - consul.zip
-      - nomad.zip
       - sentinel.zip
 
     - name: Download tflint
