@@ -1,0 +1,89 @@
+---
+  - name: Configure Workspace
+    hosts: localhost
+    tasks:
+      - name: Upgrade Homebrew
+        homebrew:
+          update_homebrew: yes
+
+      - name: Install Brew Packages
+        homebrew:
+          name: "{{ packages }}"
+          state: present
+        vars:
+          packages:
+            - ansible
+            - ansible-lint
+            - awscli
+            - binutils
+            - curl
+            - conftest
+            - consul
+            - diffutils
+            - dos2unix
+            - eksctl
+            - findutils
+            - flyway
+            - git
+            - gnu-getopt
+            - gnu-indent
+            - gnu-sed
+            - gnu-tar
+            - go
+            - helm
+            - kubernetes-cli
+            - jq
+            - linkerd
+            - minikube
+            - openssh
+            - packer
+            - pre-commit
+            - prometheus
+            - pulumi
+            - pwgen
+            - nmap
+            - sceptre
+            - shellcheck
+            - task
+            - telnet
+            - terraform
+            - terraform-docs
+            - terragrunt
+            - tflint
+            - vault
+            - vim
+            - watch
+            - wget
+            - youtube-dl
+            - zsh
+
+      - name: Install Brew Cask Packages
+        homebrew_cask:
+          name: "{{ packages }}"
+          state: present
+        vars:
+          packages:
+            - alfred
+            - bartender
+            - caffeine
+            - cyberduck
+            - dropbox
+            - firefox
+            - flux
+            - fly
+            - font-fira-code
+            - font-source-code-pro-for-powerline
+            - istat-menus
+            - iterm2
+            - sentinel
+            - shiftit
+            - slack
+            - spotify
+            - sublime-text
+            - the-unarchiver
+            - vagrant
+            - virtualbox
+            - viscosity
+            - visual-studio-code
+            - vlc
+            - zoomus
