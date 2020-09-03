@@ -19,14 +19,27 @@
           packages:
             - ansible
             - ansible-lint
+            - atlantis
             - awscli
+            - aws-cdk
+            - aws-keychain
+            - bazel
+            - bfg
             - binutils
-            - curl
+            - cfn-lint
+            - cfssl
+            - checkbashisms
+            - clair
+            - cloudformation-cli
+            - cloud-nuke
             - conftest
             - consul
+            - curl
             - diffutils
+            - doctl
             - dos2unix
             - eksctl
+            - exercism
             - findutils
             - flyway
             - git
