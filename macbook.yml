@@ -2,6 +2,11 @@
   - name: Configure Workspace
     hosts: localhost
     tasks:
+      - name: Brew Taps
+        homebrew_tap:
+          name: instrumenta/instrumenta
+          state: present
+
       - name: Upgrade Homebrew
         homebrew:
           update_homebrew: yes
