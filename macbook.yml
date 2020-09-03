@@ -69,18 +69,28 @@
         vars:
           packages:
             - alfred
+            - balenaetcher
             - bartender
             - caffeine
             - cyberduck
+            - dash
+            - docker
             - dropbox
             - firefox
             - flux
             - fly
             - font-fira-code
             - font-source-code-pro-for-powerline
+            - goland
+            - google-chrome
+            - intel-power-gadget
             - istat-menus
             - iterm2
+            - micro-snitch
+            - muzzle
+            - nordvpn
             - sentinel
+            - session-manager-plugin
             - shiftit
             - slack
             - spotify
