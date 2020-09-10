@@ -40,9 +40,11 @@
             - doctl
             - dos2unix
             - eksctl
+            - eksctl-aws-iam-authenticator
             - exercism
             - findutils
             - flyway
+            - gawk
             - git
             - gnu-getopt
             - gnu-indent
@@ -53,23 +55,30 @@
             - helm
             - httpie
             - hugo
-            - iftab
+            - iftop
+            - istioctl
             - kops
             - kubernetes-cli
             - jq
             - linkerd
             - mas
-            - md5sha1sum
             - minikube
+            - mosh
+            - mpv
+            - mtr
+            - nmap
             - openssh
             - packer
             - pre-commit
+            - prettyping
             - prometheus
             - pulumi
             - pwgen
-            - nmap
+            - ruby
             - sceptre
+            - sops
             - shellcheck
+            - sqlite
             - task
             - telnet
             - terraform
