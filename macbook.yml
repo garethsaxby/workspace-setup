@@ -23,6 +23,7 @@
             - awscli
             - aws-cdk
             - aws-keychain
+            - bash
             - bazel
             - bfg
             - binutils
@@ -48,10 +49,17 @@
             - gnu-sed
             - gnu-tar
             - go
+            - hadolint
             - helm
+            - httpie
+            - hugo
+            - iftab
+            - kops
             - kubernetes-cli
             - jq
             - linkerd
+            - mas
+            - md5sha1sum
             - minikube
             - openssh
             - packer
