@@ -4,8 +4,12 @@
     tasks:
       - name: Brew Taps
         homebrew_tap:
-          name: instrumenta/instrumenta
+          name: "{{ item }}"
           state: present
+        loop:
+          - instrumenta/instrumenta
+          - chef/chef
+          - homebrew/cask-fonts 
 
       - name: Upgrade Homebrew
         homebrew:
