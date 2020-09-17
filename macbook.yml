@@ -92,7 +92,6 @@
             - terragrunt
             - tflint
             - vault
-            - vim
             - watch
             - wget
             - youtube-dl
