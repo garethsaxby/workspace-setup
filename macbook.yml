@@ -48,6 +48,7 @@
             - findutils
             - flyway
             - gawk
+            - gh
             - git
             - gnu-getopt
             - gnu-indent
