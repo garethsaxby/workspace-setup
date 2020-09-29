@@ -1,142 +1,142 @@
 ---
-  - name: Configure Workspace
-    hosts: localhost
-    tasks:
-      - name: Brew Taps
-        homebrew_tap:
-          name: "{{ item }}"
-          state: present
-        loop:
-          - instrumenta/instrumenta
-          - chef/chef
-          - homebrew/cask-fonts 
+- name: Configure Workspace
+  hosts: localhost
+  tasks:
+    - name: Brew Taps
+      homebrew_tap:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - instrumenta/instrumenta
+        - chef/chef
+        - homebrew/cask-fonts
 
-      - name: Upgrade Homebrew
-        homebrew:
-          update_homebrew: yes
+    - name: Upgrade Homebrew
+      homebrew:
+        update_homebrew: yes
 
-      - name: Install Brew Packages
-        homebrew:
-          name: "{{ packages }}"
-          state: present
-        vars:
-          packages:
-            - ansible
-            - ansible-lint
-            - atlantis
-            - awscli
-            - aws-cdk
-            - aws-keychain
-            - bash
-            - bazel
-            - bfg
-            - binutils
-            - cfn-lint
-            - cfssl
-            - checkbashisms
-            - clair
-            - cloudformation-cli
-            - cloud-nuke
-            - conftest
-            - consul
-            - curl
-            - diffutils
-            - doctl
-            - dos2unix
-            - eksctl
-            - exercism
-            - findutils
-            - flyway
-            - gawk
-            - gh
-            - git
-            - gnu-getopt
-            - gnu-indent
-            - gnu-sed
-            - gnu-tar
-            - go
-            - hadolint
-            - helm
-            - httpie
-            - hugo
-            - iftop
-            - istioctl
-            - kops
-            - kubernetes-cli
-            - jq
-            - linkerd
-            - mas
-            - minikube
-            - mosh
-            - mpv
-            - mtr
-            - neovim
-            - nmap
-            - openssh
-            - packer
-            - pre-commit
-            - prettyping
-            - prometheus
-            - pulumi
-            - pwgen
-            - ruby
-            - sceptre
-            - sops
-            - shellcheck
-            - sqlite
-            - svn
-            - task
-            - telnet
-            - terraform
-            - terraform-docs
-            - terragrunt
-            - tflint
-            - vault
-            - watch
-            - wget
-            - youtube-dl
-            - zsh
+    - name: Install Brew Packages
+      homebrew:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - ansible
+          - ansible-lint
+          - atlantis
+          - awscli
+          - aws-cdk
+          - aws-keychain
+          - bash
+          - bazel
+          - bfg
+          - binutils
+          - cfn-lint
+          - cfssl
+          - checkbashisms
+          - clair
+          - cloudformation-cli
+          - cloud-nuke
+          - conftest
+          - consul
+          - curl
+          - diffutils
+          - doctl
+          - dos2unix
+          - eksctl
+          - exercism
+          - findutils
+          - flyway
+          - gawk
+          - gh
+          - git
+          - gnu-getopt
+          - gnu-indent
+          - gnu-sed
+          - gnu-tar
+          - go
+          - hadolint
+          - helm
+          - httpie
+          - hugo
+          - iftop
+          - istioctl
+          - kops
+          - kubernetes-cli
+          - jq
+          - linkerd
+          - mas
+          - minikube
+          - mosh
+          - mpv
+          - mtr
+          - neovim
+          - nmap
+          - openssh
+          - packer
+          - pre-commit
+          - prettyping
+          - prometheus
+          - pulumi
+          - pwgen
+          - ruby
+          - sceptre
+          - sops
+          - shellcheck
+          - sqlite
+          - svn
+          - task
+          - telnet
+          - terraform
+          - terraform-docs
+          - terragrunt
+          - tflint
+          - vault
+          - watch
+          - wget
+          - youtube-dl
+          - zsh
 
-      - name: Install Brew Cask Packages
-        homebrew_cask:
-          name: "{{ packages }}"
-          state: present
-        vars:
-          packages:
-            - alfred
-            - balenaetcher
-            - bartender
-            - caffeine
-            - cyberduck
-            - dash
-            - docker
-            - dropbox
-            - firefox
-            - flux
-            - fly
-            - font-fira-code
-            - font-source-code-pro-for-powerline
-            - goland
-            - google-chrome
-            - inspec
-            - intel-power-gadget
-            - istat-menus
-            - iterm2
-            - micro-snitch
-            - muzzle
-            - nordvpn
-            - opera
-            - racket
-            - sentinel
-            - session-manager-plugin
-            - shiftit
-            - slack
-            - spotify
-            - sublime-text
-            - the-unarchiver
-            - vagrant
-            - virtualbox
-            - viscosity
-            - visual-studio-code
-            - vlc
-            - zoomus
+    - name: Install Brew Cask Packages
+      homebrew_cask:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - alfred
+          - balenaetcher
+          - bartender
+          - caffeine
+          - cyberduck
+          - dash
+          - docker
+          - dropbox
+          - firefox
+          - flux
+          - fly
+          - font-fira-code
+          - font-source-code-pro-for-powerline
+          - goland
+          - google-chrome
+          - inspec
+          - intel-power-gadget
+          - istat-menus
+          - iterm2
+          - micro-snitch
+          - muzzle
+          - nordvpn
+          - opera
+          - racket
+          - sentinel
+          - session-manager-plugin
+          - shiftit
+          - slack
+          - spotify
+          - sublime-text
+          - the-unarchiver
+          - vagrant
+          - virtualbox
+          - viscosity
+          - visual-studio-code
+          - vlc
+          - zoomus
