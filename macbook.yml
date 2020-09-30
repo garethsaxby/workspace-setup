@@ -10,6 +10,7 @@
         - instrumenta/instrumenta
         - chef/chef
         - homebrew/cask-fonts
+        - hashicorp/tap
 
     - name: Upgrade Homebrew
       homebrew:
@@ -38,7 +39,7 @@
           - cloudformation-cli
           - cloud-nuke
           - conftest
-          - consul
+          - hashicorp/tap/consul
           - curl
           - diffutils
           - doctl
@@ -72,8 +73,9 @@
           - mtr
           - neovim
           - nmap
+          - hashicorp/tap/nomad
           - openssh
-          - packer
+          - hashicorp/tap/packer
           - pre-commit
           - prettyping
           - prometheus
@@ -87,11 +89,11 @@
           - svn
           - task
           - telnet
-          - terraform
+          - hashicorp/tap/terraform
           - terraform-docs
           - terragrunt
           - tflint
-          - vault
+          - hashicorp/tap/vault
           - watch
           - wget
           - youtube-dl
