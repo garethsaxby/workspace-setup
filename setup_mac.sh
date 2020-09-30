@@ -7,7 +7,7 @@
 # See http://redsymbol.net/articles/bash-exit-traps/ for details
 set -Eeuo pipefail
 function fatal_err {
-	printf '\nError: See output for details.\n'
+  printf '\nError: See output for details.\n'
 }
 trap fatal_err ERR
 
@@ -19,58 +19,58 @@ NORMAL=$(tput sgr0)
 
 # Standardised print function for output messages
 function print {
-	printf '%s: %s\n' "${BOLD}${BLUE}$(date '+%Y-%m-%dT%H:%M:%S')${NORMAL}" "$@"
+  printf '%s: %s\n' "${BOLD}${BLUE}$(date '+%Y-%m-%dT%H:%M:%S')${NORMAL}" "$@"
 }
 
 function install_homebrew {
-	# Test if CLT for XCode is installed, install if not present	
-	if ! xcode-select -p 1>/dev/null; then
-		print "Installing Command Line Tools for Xcode..."
-		xcode-select --install
-		print "Command Line Tools for Xcode installed"
-	fi
-	
-	# Test if Homebrew is installed, install if not present
-	if ! [ -x "$(command -v brew)" ]; then
-		print "Installing Homebrew..."
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-		print "Homebrew installed"
-	fi
+  # Test if CLT for XCode is installed, install if not present    
+  if ! xcode-select -p 1>/dev/null; then
+    print "Installing Command Line Tools for Xcode..."
+    xcode-select --install
+    print "Command Line Tools for Xcode installed"
+  fi
+
+  # Test if Homebrew is installed, install if not present
+  if ! [ -x "$(command -v brew)" ]; then
+    print "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    print "Homebrew installed"
+  fi
 }
 
 function install_python {
-	# Test if Python 3 is installed, install if not present
-	if ! [ -x "$(command -v python3)" ]; then
-		print "Installing Python 3..."
-		brew install python3
-		print "Python 3 installed"
-	fi
+  # Test if Python 3 is installed, install if not present
+  if ! [ -x "$(command -v python3)" ]; then
+    print "Installing Python 3..."
+    brew install python3
+    print "Python 3 installed"
+  fi
 }
 
 function install_ansible {
-	# Test if Ansible is installed, install if not present
-		if ! [ -x "$(command -v ansible)" ]; then
-			print "Installing Ansible..."
-			brew install ansible
-			print "Ansible installed"
-		fi
+  # Test if Ansible is installed, install if not present
+  if ! [ -x "$(command -v ansible)" ]; then
+    print "Installing Ansible..."
+    brew install ansible
+    print "Ansible installed"
+  fi
 }
 
 function run_ansible {
-	# Run the ansible playbook to install software
-	# The playbook is designed to be idempotent where reasonable
-	print "Running Ansible..."
-	ansible-playbook macbook.yml
-	print "Finished Running Ansible"
+  # Run the ansible playbook to install software
+  # The playbook is designed to be idempotent where reasonable
+  print "Running Ansible..."
+  ansible-playbook macbook.yml
+  print "Finished Running Ansible"
 }
 
 function main {
-	print "Starting Setup..."
-	install_homebrew
-	install_python
-	install_ansible
-	run_ansible
-	print "Setup Complete"
+  print "Starting Setup..."
+  install_homebrew
+  install_python
+  install_ansible
+  run_ansible
+  print "Setup Complete"
 }
 
 main
