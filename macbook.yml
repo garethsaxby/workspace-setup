@@ -25,6 +25,7 @@
           - act
           - ansible
           - ansible-lint
+          - argocd
           - atlantis
           - awscli
           - aws-cdk
