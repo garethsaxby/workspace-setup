@@ -21,3 +21,4 @@ jobs:
           VALIDATE_ANSIBLE: true
           VALIDATE_BASH: true
           VALIDATE_BASH_EXEC: true
+          VALIDATE_MD: true
