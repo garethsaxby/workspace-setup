@@ -1,1 +1,5 @@
+# Ignore the Nova Editor configuration files
 .nova
+
+# Ignore any Ansible retry files
+*.retry
