@@ -1,6 +1,23 @@
 # workspace-setup
 
-This repository contains the setup code for deploying my coding environment, using VS Code Codespaces on a Linux VM.
+This repository contains the setup code for deploying my workspace environment, predominantly on macOS. Older code exists for an Ubuntu based environment, but I have since decided against this solution; it remains for reference purposes.
 
-This is currently based on Ubuntu 20.04, and I try to track the latest Ubuntu LTS release where possible.
+## Running Instructions
+```bash
+./setup_mac.sh
+```
 
+## Technical Information
+The setup script performs the following actions;
+
+1. Installs [Homebrew](https://brew.sh) if it is not already installed.
+2. Installs Python 3 from Homebrew if it is not already installed.
+3. Installs Ansible from Homebrew if it is not already installed.
+4. Execute the playbook `macbook.yml`.
+
+The playbook then installs numerous Homebrew formulae and casks.
+
+## Todo
+- Configuration management
+- Dotfile management
+- System Updates
