@@ -60,7 +60,9 @@ function run_ansible {
   # Run the ansible playbook to install software
   # The playbook is designed to be idempotent where reasonable
   print "Running Ansible..."
+  pushd ansible > /dev/null
   ansible-playbook macbook.yml
+  popd > /dev/null
   print "Finished Running Ansible"
 }
 
