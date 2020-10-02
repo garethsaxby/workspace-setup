@@ -1,6 +1,6 @@
 # workspace-setup
 
-This repository contains the setup code for deploying my workspace environment, predominantly on macOS. Older code exists for an Ubuntu based environment, but I have since decided against this solution; it remains for reference purposes.
+This repository contains the setup code for deploying my workspace environment, predominantly on macOS.
 
 ## Running Instructions
 ```bash
