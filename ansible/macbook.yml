@@ -144,3 +144,16 @@
           - visual-studio-code
           - vlc
           - zoomus
+
+    - name: Create Setup Folder
+      file:
+        path: /Users/gsaxby/setup/
+        owner: gsaxby
+        group: staff
+        mode: 0755
+        state: directory
+
+    - name: Clone DotFiles Repo
+      git:
+        repo: https://github.com/garethsaxby/dotfiles.git
+        dest: /Users/gsaxby/setup/dotfiles/
