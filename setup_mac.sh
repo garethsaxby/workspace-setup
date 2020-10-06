@@ -56,6 +56,14 @@ function install_ansible {
   fi
 }
 
+function install_ansible_collections {
+  print "Installing required Ansible Collections..."
+  pushd ansible > /dev/null
+  ansible-galaxy collection install -r requirements.yml
+  popd > /dev/null
+  print "Finished installing Ansible Collections"
+}
+
 function run_ansible {
   # Run the ansible playbook to install software
   # The playbook is designed to be idempotent where reasonable
@@ -71,6 +79,7 @@ function main {
   install_homebrew
   install_python
   install_ansible
+  install_ansible_collections
   run_ansible
   print "Setup Complete"
 }
