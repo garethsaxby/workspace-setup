@@ -3,25 +3,22 @@
   hosts: localhost
   tasks:
     - name: Brew Taps
-      homebrew_tap:
-        name: "{{ item }}"
+      community.general.homebrew_tap:
+        name:
+          - instrumenta/instrumenta
+          - chef/chef
+          - homebrew/cask-fonts
+          - hashicorp/tap
         state: present
-      loop:
-        - instrumenta/instrumenta
-        - chef/chef
-        - homebrew/cask-fonts
-        - hashicorp/tap
 
     - name: Upgrade Homebrew
-      homebrew:
+      community.general.homebrew:
         update_homebrew: yes
 
     - name: Install Brew Packages
-      homebrew:
-        name: "{{ packages }}"
+      community.general.homebrew:
         state: present
-      vars:
-        packages:
+        name:
           - act
           - ansible
           - ansible-lint
@@ -146,6 +143,14 @@
           - visual-studio-code
           - vlc
           - zoomus
+  
+    - name: Install App Store Packages
+      community.general.mas:
+        id:
+          - 585829637   # Todoist
+          - 975937182   # Fantastical
+          - 1091189122  # Bear
+          - 1295203466  # Microsoft Remote Desktop
 
     - name: Create Setup Folder
       file:
