@@ -27,6 +27,8 @@ function install_homebrew {
   if ! [ -x "$(command -v brew)" ]; then
     print "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	# Disable Homebrew Analytics
+	brew analytics off
     print "Homebrew installed"
   fi
 }
