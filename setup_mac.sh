@@ -23,13 +23,6 @@ function print {
 }
 
 function install_homebrew {
-  # Test if CLT for XCode is installed, install if not present    
-  if ! xcode-select -p 1>/dev/null; then
-    print "Installing Command Line Tools for Xcode..."
-    xcode-select --install
-    print "Command Line Tools for Xcode installed"
-  fi
-
   # Test if Homebrew is installed, install if not present
   if ! [ -x "$(command -v brew)" ]; then
     print "Installing Homebrew..."
