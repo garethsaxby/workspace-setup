@@ -105,6 +105,7 @@
       vars:
         packages:
           - alfred
+          - aerial
           - balenaetcher
           - bartender
           - caffeine
@@ -143,14 +144,14 @@
           - visual-studio-code
           - vlc
           - zoomus
-  
+
     - name: Install App Store Packages
       community.general.mas:
         id:
-          - 585829637   # Todoist
-          - 975937182   # Fantastical
-          - 1091189122  # Bear
-          - 1295203466  # Microsoft Remote Desktop
+          - 585829637 # Todoist
+          - 975937182 # Fantastical
+          - 1091189122 # Bear
+          - 1295203466 # Microsoft Remote Desktop
 
     - name: Create Setup Folder
       file:
