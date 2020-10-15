@@ -75,6 +75,7 @@
           - nmap
           - hashicorp/tap/nomad
           - openssh
+          - buildpacks/tap/pack
           - hashicorp/tap/packer
           - pre-commit
           - prettyping
