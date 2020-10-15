@@ -31,6 +31,7 @@
           - bazel
           - bfg
           - binutils
+          - hashicorp/tap/boundary
           - cfn-lint
           - cfssl
           - checkbashisms
