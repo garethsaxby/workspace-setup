@@ -95,6 +95,7 @@
           - tflint
           - hashicorp/tap/vault
           - watch
+          - hashicorp/tap/waypoint
           - wget
           - youtube-dl
           - zsh
