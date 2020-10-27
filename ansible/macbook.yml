@@ -83,6 +83,8 @@
           - prometheus
           - pulumi
           - pwgen
+          - pyenv
+          - pyenv-virtualenv
           - ruby
           - sceptre
           - sops
