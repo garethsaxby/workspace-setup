@@ -76,6 +76,7 @@
           - nmap
           - hashicorp/tap/nomad
           - openssh
+          - openssl
           - buildpacks/tap/pack
           - hashicorp/tap/packer
           - pre-commit
@@ -85,11 +86,13 @@
           - pwgen
           - pyenv
           - pyenv-virtualenv
+          - readline
           - ruby
           - sceptre
           - sops
           - shellcheck
           - sqlite
+          - sqlite3
           - svn
           - task
           - telnet
@@ -101,7 +104,9 @@
           - watch
           - hashicorp/tap/waypoint
           - wget
+          - xz
           - youtube-dl
+          - zlib
           - zsh
 
     - name: Install Brew Cask Packages
