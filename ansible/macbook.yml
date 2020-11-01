@@ -24,6 +24,7 @@
           - ansible-lint
           - argocd
           - atlantis
+          - aspell
           - awscli
           - aws-cdk
           - aws-keychain
