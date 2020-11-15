@@ -80,6 +80,7 @@
           - openssl
           - buildpacks/tap/pack
           - hashicorp/tap/packer
+          - pipenv
           - pre-commit
           - prettyping
           - prometheus
@@ -173,7 +174,6 @@
         group: staff
         mode: 0755
         state: directory
-
 #    - name: Clone DotFiles Repo
 #      git:
 #        repo: https://github.com/garethsaxby/dotfiles.git
