@@ -32,6 +32,7 @@
           - bazel
           - bfg
           - binutils
+          - black
           - hashicorp/tap/boundary
           - cfn-lint
           - cfssl
@@ -63,6 +64,7 @@
           - httpie
           - hugo
           - iftop
+          - isort
           - istioctl
           - kops
           - kubernetes-cli
@@ -88,6 +90,7 @@
           - pwgen
           - pyenv
           - pyenv-virtualenv
+          - pylint
           - readline
           - ruby
           - sceptre
