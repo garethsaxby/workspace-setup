@@ -9,6 +9,7 @@
           - chef/chef
           - homebrew/cask-fonts
           - hashicorp/tap
+          - d12frosted/emacs-plus
         state: present
 
     - name: Upgrade Homebrew
@@ -47,7 +48,9 @@
           - doctl
           - dos2unix
           - eksctl
+          - emacs-plus
           - exercism
+          - fd
           - findutils
           - flyway
           - gawk
@@ -70,6 +73,7 @@
           - kubernetes-cli
           - jq
           - linkerd
+          - marked
           - mas
           - minikube
           - mosh
@@ -84,6 +88,7 @@
           - hashicorp/tap/packer
           - pipenv
           - pre-commit
+          - postgresql
           - prettyping
           - prometheus
           - pulumi
@@ -92,6 +97,7 @@
           - pyenv-virtualenv
           - pylint
           - readline
+          - ripgrep
           - ruby
           - sceptre
           - sops
@@ -147,6 +153,7 @@
           - nordvpn
           - nova
           - opera
+          - paw
           - racket
           - sentinel
           - session-manager-plugin
@@ -177,6 +184,7 @@
         group: staff
         mode: 0755
         state: directory
+
 #    - name: Clone DotFiles Repo
 #      git:
 #        repo: https://github.com/garethsaxby/dotfiles.git
