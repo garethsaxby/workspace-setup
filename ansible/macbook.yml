@@ -47,6 +47,7 @@
           - diffutils
           - doctl
           - dos2unix
+          - editorconfig
           - eksctl
           - emacs-plus
           - exercism
