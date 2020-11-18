@@ -46,6 +46,7 @@
           - diffutils
           - doctl
           - dos2unix
+          - editorconfig
           - eksctl
           - exercism
           - findutils
@@ -70,6 +71,7 @@
           - kubernetes-cli
           - jq
           - linkerd
+          - marked
           - mas
           - minikube
           - mosh
