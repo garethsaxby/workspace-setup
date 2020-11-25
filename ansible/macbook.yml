@@ -10,6 +10,7 @@
           - homebrew/cask-fonts
           - hashicorp/tap
           - d12frosted/emacs-plus
+          - derailed/k9s
         state: present
 
     - name: Upgrade Homebrew
@@ -72,6 +73,7 @@
           - istioctl
           - kops
           - kubernetes-cli
+          - derailed/k9s/k9s
           - jq
           - linkerd
           - marked
