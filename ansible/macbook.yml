@@ -171,7 +171,7 @@
           - viscosity
           - visual-studio-code
           - vlc
-          - zoomus
+          - zoom
 
     - name: Install App Store Packages
       community.general.mas:
