@@ -114,6 +114,7 @@
           - terraform-docs
           - terragrunt
           - tflint
+          - typescript
           - hashicorp/tap/vault
           - watch
           - hashicorp/tap/waypoint
