@@ -2,5 +2,5 @@ collections:
 #- name: community.general
 - name: https://github.com/ansible-collections/community.general
   type: git
-  version: 4c379bd3b2147710c3e7a1d900cddf47a6b7cd42 
+  version: ddaad1e650a45c83d591a7f5b3ae6a34d9405d63 
 
