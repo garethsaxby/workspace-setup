@@ -120,6 +120,7 @@
           - hashicorp/tap/waypoint
           - wget
           - xz
+          - yamllint
           - youtube-dl
           - zlib
           - zsh
